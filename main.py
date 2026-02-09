@@ -1,30 +1,23 @@
 import streamlit as st
-import overview
-import about_me
-import EDA
-import model_evaluation
-import prediksi
 
-st.set_page_config(page_title="Churn Portfolio", layout="wide")
-
-st.sidebar.title("📂 Navigation")
+st.sidebar.title("Navigation")
 
 page = st.sidebar.radio(
     "Go to",
-    ["Overview","About Me","EDA","Model Evaluation","Prediction"]
+    ["Overview", "About Me", "EDA", "Model Evaluation", "Prediction"]
 )
 
 if page == "Overview":
-    overview.app()
+    exec(open("overview.py").read())
 
 elif page == "About Me":
-    about_me.app()
+    exec(open("about_me.py").read())
 
 elif page == "EDA":
-    EDA.app()
+    exec(open("EDA.py").read())
 
 elif page == "Model Evaluation":
-    model_evaluation.app()
+    exec(open("model_evaluation.py").read())
 
 elif page == "Prediction":
-    prediksi.app()
+    exec(open("prediksi.py").read())
